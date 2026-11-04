@@ -52,13 +52,17 @@ workflows:
         script: |
           keychain add-certificates
 
+      - name: Fetch Flutter dependencies & CocoaPods
+        script: |
+          echo "==> Fetching Flutter dependencies..."
+          flutter pub get
+          echo "==> Installing CocoaPods dependencies..."
+          find . -name "Podfile" -execdir pod install \;
+
       - name: Apply code signing profiles to Xcode project
         script: |
+          echo "==> Applying code signing profiles..."
           xcode-project use-profiles
-
-      - name: Fetch Flutter dependencies
-        script: |
-          flutter pub get
 
       - name: Build iOS IPA for TestFlight
         script: |
