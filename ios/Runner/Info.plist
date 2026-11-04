@@ -66,5 +66,21 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+
+	<!-- Privacy Usage Descriptions Required by Apple App Store -->
+	<key>NSCameraUsageDescription</key>
+	<string>PJ Masks requires camera access to display interactive AR hero masks and take superhero photos.</string>
+
+	<key>NSMicrophoneUsageDescription</key>
+	<string>PJ Masks requires microphone access for interactive superhero voice effects and video features.</string>
+
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>PJ Masks requires photo library access to save your superhero photos and hero badges.</string>
+
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>PJ Masks requires permission to save your superhero photos to your camera roll.</string>
+
+	<key>NSUserTrackingUsageDescription</key>
+	<string>This identifier will be used to deliver personalized ads and relevant game content to you.</string>
 </dict>
 </plist>
