@@ -54,6 +54,8 @@ workflows:
 
       - name: Fetch Flutter dependencies & CocoaPods
         script: |
+          echo "==> Disabling Swift Package Manager to enforce stable CocoaPods..."
+          flutter config --no-enable-swift-package-manager
           echo "==> Fetching Flutter dependencies..."
           flutter pub get
           echo "==> Installing CocoaPods dependencies..."
