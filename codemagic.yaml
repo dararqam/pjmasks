@@ -1,0 +1,85 @@
+workflows:
+  ios-testflight:
+    name: PJ Masks iOS TestFlight Release
+    max_build_duration: 60
+    instance_type: mac_mini_m2
+
+    environment:
+      groups:
+        # Group created in Codemagic UI containing App Store Connect API Key
+        - app_store_credentials
+      vars:
+        # Your iOS Bundle Identifier
+        BUNDLE_ID: "com.pjmasks.pjMasks"
+      flutter: stable
+      xcode: latest
+      cocoapods: default
+
+    triggering:
+      events:
+        - push
+        - tag
+      branch_patterns:
+        - pattern: 'main'
+          include: true
+          source: true
+        - pattern: 'release/*'
+          include: true
+          source: true
+
+    scripts:
+      - name: Configure and pull Git LFS assets
+        script: |
+          echo "==> Initializing Git LFS and pulling large binary assets..."
+          git lfs install --skip-smudge
+          git lfs pull
+          echo "==> Verifying video assets..."
+          ls -lh assets/videos/
+
+      - name: Set up keychain for iOS code signing
+        script: |
+          echo "==> Initializing keychain..."
+          keychain initialize
+
+      - name: Fetch signing files from App Store Connect
+        script: |
+          echo "==> Fetching certificates and provisioning profiles for $BUNDLE_ID..."
+          app-store-connect fetch-signing-files "$BUNDLE_ID" \
+            --type IOS_APP_STORE \
+            --create
+
+      - name: Add certificates to keychain
+        script: |
+          keychain add-certificates
+
+      - name: Apply code signing profiles to Xcode project
+        script: |
+          xcode-project use-profiles
+
+      - name: Fetch Flutter dependencies
+        script: |
+          flutter pub get
+
+      - name: Build iOS IPA for TestFlight
+        script: |
+          flutter build ipa --release \
+            --export-options-plist=/Users/builder/export_options.plist
+
+    artifacts:
+      - build/ios/ipa/*.ipa
+      - /tmp/xcodebuild_logs/*.log
+
+    publishing:
+      app_store_connect:
+        api_key: $APP_STORE_CONNECT_PRIVATE_KEY
+        key_id: $APP_STORE_CONNECT_KEY_IDENTIFIER
+        issuer_id: $APP_STORE_CONNECT_ISSUER_ID
+        submit_to_testflight: true
+        beta_groups:
+          - "Internal Testers"
+      email:
+        recipients:
+          - user@example.com
+        notify:
+          success: true
+          failure: true

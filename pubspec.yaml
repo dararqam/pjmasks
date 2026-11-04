@@ -1,0 +1,48 @@
+name: pj_masks
+description: "PJ Masks: Time to be a Hero — Flutter Edition with CAS.AI mediation"
+publish_to: 'none'
+
+version: 2.1.2+1
+
+environment:
+  sdk: ^3.13.3
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+
+  # ── CAS.AI (Clever Ads Solutions) Mediation SDK ──────────────────────────────
+  clever_ads_solutions: ^4.8.0
+
+  # ── UI & Animation ────────────────────────────────────────────────────────────
+  flutter_animate: ^4.5.0
+
+  # ── State management & Storage ────────────────────────────────────────────────
+  shared_preferences: ^2.3.2
+
+  # ── Audio & Video ─────────────────────────────────────────────────────────────
+  audioplayers: ^6.1.0
+  video_player: ^2.9.1
+
+  # ── Camera & Sensor ───────────────────────────────────────────────────────────
+  camera: ^0.11.0
+  permission_handler: ^11.3.1
+
+  # ── Utility ───────────────────────────────────────────────────────────────────
+  url_launcher: ^6.3.0
+  package_info_plus: ^8.1.0
+  path_provider: ^2.1.4
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/images/
+    - assets/videos/
+    - assets/audio/
