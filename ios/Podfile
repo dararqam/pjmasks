@@ -1,3 +1,7 @@
+# CocoaPods Specs Sources (CAS.AI requires its dedicated spec repo)
+source 'https://cdn.cocoapods.org/'
+source 'https://github.com/cleveradssolutions/CAS-Specs.git'
+
 # Set minimum iOS deployment target
 platform :ios, '15.0'
 

@@ -58,8 +58,8 @@ workflows:
           flutter config --no-enable-swift-package-manager
           echo "==> Fetching Flutter dependencies..."
           flutter pub get
-          echo "==> Installing CocoaPods dependencies..."
-          find . -name "Podfile" -execdir pod install \;
+          echo "==> Installing CocoaPods dependencies with repo update..."
+          cd ios && pod install --repo-update && cd ..
 
       - name: Apply code signing profiles to Xcode project
         script: |
