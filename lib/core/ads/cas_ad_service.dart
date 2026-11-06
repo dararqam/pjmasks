@@ -31,11 +31,14 @@ class CasAdService {
     if (_isInitialised) return;
 
     try {
+      // Child-directed strictly compliant configuration:
+      // - Audience.children ensures COPPA compliance and disables personalized tracking
+      // - showConsentFormIfRequired set to false to prevent tracking/consent prompts
       final status = await CASMobileAds.initialize(
         casId: kCasAppId,
         forceTestAds: kCasTestMode,
         targetAudience: Audience.children,
-        showConsentFormIfRequired: true,
+        showConsentFormIfRequired: false,
       );
 
       debugPrint('[CAS.AI] Initialized successfully: error=${status.error}, country=${status.countryCode}');

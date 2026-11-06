@@ -60,7 +60,7 @@ class _PhotoStudioScreenState extends State<PhotoStudioScreen> {
     return Scaffold(
       backgroundColor: const Color(0xFF0A0E20),
       appBar: AppBar(
-        title: const Text('PHOTO BADGE STUDIO'),
+        title: const Text('HERO BADGE STUDIO'),
         actions: [
           IconButton(
             icon: const Icon(Icons.delete_outline, color: Colors.white70),
@@ -75,6 +75,28 @@ class _PhotoStudioScreenState extends State<PhotoStudioScreen> {
       body: SafeArea(
         child: Column(
           children: [
+            // Safe Badge Guidelines Banner
+            Container(
+              width: double.infinity,
+              padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 12),
+              color: Colors.cyan.withOpacity(0.12),
+              child: const Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(Icons.shield_outlined, color: AppColors.cyan, size: 16),
+                  SizedBox(width: 6),
+                  Text(
+                    'Superhero Avatar & Badge Studio — Family Safe Only',
+                    style: TextStyle(
+                      color: Colors.white70,
+                      fontSize: 11,
+                      fontWeight: FontWeight.w700,
+                      letterSpacing: 0.5,
+                    ),
+                  ),
+                ],
+              ),
+            ),
             // Photo Canvas Area with Border Frame
             Expanded(
               child: Padding(
