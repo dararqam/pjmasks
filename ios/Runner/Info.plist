@@ -73,5 +73,44 @@
 
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>Permission is required only to save your created superhero badge photo to your device photo library.</string>
+
+	<!-- Google AdMob App ID for CAS.AI Mobile Ads Mediation -->
+	<key>GADApplicationIdentifier</key>
+	<string>ca-app-pub-9041187040625593~2739855071</string>
+
+	<!-- App Tracking Transparency description for ad attribution -->
+	<key>NSUserTrackingUsageDescription</key>
+	<string>This identifier is used to show relevant ads and support game development.</string>
+
+	<!-- SKAdNetwork Identifiers for CAS.AI Starter Pack Networks -->
+	<key>SKAdNetworkItems</key>
+	<array>
+		<!-- Google AdMob -->
+		<dict><key>SKAdNetworkIdentifier</key><string>cstr6suwn9.skadnetwork</string></dict>
+		<!-- AppLovin -->
+		<dict><key>SKAdNetworkIdentifier</key><string>ludvb6z3bs.skadnetwork</string></dict>
+		<!-- Unity Ads -->
+		<dict><key>SKAdNetworkIdentifier</key><string>4dzt52r2t5.skadnetwork</string></dict>
+		<!-- ironSource -->
+		<dict><key>SKAdNetworkIdentifier</key><string>su67r6k2v3.skadnetwork</string></dict>
+		<!-- Mintegral -->
+		<dict><key>SKAdNetworkIdentifier</key><string>kbd757bev4.skadnetwork</string></dict>
+		<!-- Liftoff / Vungle -->
+		<dict><key>SKAdNetworkIdentifier</key><string>v79kvw-q5g.skadnetwork</string></dict>
+		<!-- InMobi -->
+		<dict><key>SKAdNetworkIdentifier</key><string>wzmmz9fp6w.skadnetwork</string></dict>
+		<!-- Pangle -->
+		<dict><key>SKAdNetworkIdentifier</key><string>22mmun2rn5.skadnetwork</string></dict>
+		<!-- Chartboost -->
+		<dict><key>SKAdNetworkIdentifier</key><string>f38h382jlk.skadnetwork</string></dict>
+		<dict><key>SKAdNetworkIdentifier</key><string>238da6jt44.skadnetwork</string></dict>
+		<dict><key>SKAdNetworkIdentifier</key><string>446h53uz2q.skadnetwork</string></dict>
+		<dict><key>SKAdNetworkIdentifier</key><string>488r3q3dtq.skadnetwork</string></dict>
+		<dict><key>SKAdNetworkIdentifier</key><string>tl55sbb4fm.skadnetwork</string></dict>
+		<dict><key>SKAdNetworkIdentifier</key><string>mlmmfzh3r3.skadnetwork</string></dict>
+		<dict><key>SKAdNetworkIdentifier</key><string>klf5c3l5u5.skadnetwork</string></dict>
+		<dict><key>SKAdNetworkIdentifier</key><string>9t245vhm4fac.skadnetwork</string></dict>
+		<dict><key>SKAdNetworkIdentifier</key><string>bvpn9ufa9b.skadnetwork</string></dict>
+	</array>
 </dict>
 </plist>

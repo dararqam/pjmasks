@@ -18,8 +18,8 @@ const String kCasAppId = '6830396196';
 /// App Store ID used by CAS for iOS attribution
 const String kCasIosAppId = '6830396196';
 
-/// Use test mode during development — set false before submitting to stores
-const bool kCasTestMode = true;
+/// Set false for production release builds to serve live ads
+const bool kCasTestMode = false;
 
 /// Ad unit types this app enables
 /// CAS will fill from whichever networks have available demand
