@@ -2,7 +2,7 @@ name: pj_masks
 description: "PJ Masks: Time to be a Hero — Flutter Edition with CAS.AI mediation"
 publish_to: 'none'
 
-version: 2.1.3+4
+version: 2.1.3+5
 
 environment:
   sdk: ^3.13.3

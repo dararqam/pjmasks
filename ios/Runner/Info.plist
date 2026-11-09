@@ -78,11 +78,7 @@
 	<key>GADApplicationIdentifier</key>
 	<string>ca-app-pub-9041187040625593~2739855071</string>
 
-	<!-- App Tracking Transparency description for ad attribution -->
-	<key>NSUserTrackingUsageDescription</key>
-	<string>This identifier is used to show relevant ads and support game development.</string>
-
-	<!-- SKAdNetwork Identifiers for CAS.AI Starter Pack Networks -->
+	<!-- SKAdNetwork Identifiers for CAS.AI Starter Pack Networks (COPPA / Child-Safe Compliant) -->
 	<key>SKAdNetworkItems</key>
 	<array>
 		<!-- Google AdMob -->
